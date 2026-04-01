@@ -1,0 +1,32 @@
+root@orangepi3-lts:~# sudo apt-mark hold linux-u-boot-current-orangepi3-lts
+E: Unable to locate package linux-u-boot-current-orangepi3-lts
+E: No packages found
+root@orangepi3-lts:~# dpkg -l | grep u-boot
+hi  linux-u-boot-orangepi3-lts-current    26.2.1                             arm64        Das U-Boot for orangepi3-lts
+ii  u-boot-tools                          2025.01-3                          arm64        companion tools for Das U-Boot bootloader
+root@orangepi3-lts:~# sudo apt-mark hold linux-u-boot-orangepi3-lts-current
+linux-u-boot-orangepi3-lts-current was already set on hold.
+root@orangepi3-lts:~# apt-mark showhold
+armbian-bsp-cli-orangepi3-lts-current
+armbian-firmware
+armbian-plymouth-theme
+armbian-zsh
+base-files
+linux-dtb-current-sunxi64
+linux-image-current-sunxi64
+linux-u-boot-orangepi3-lts-current
+root@orangepi3-lts:~# sudo docker ps -a
+CONTAINER ID   IMAGE                                                       COMMAND               CREATED             STATUS          PORTS                                     NAMES
+58e804ffa17e   ghcr.io/home-assistant/aarch64-hassio-multicast:2026.02.0   "/init"               12 minutes ago      Up 12 minutes                                             hassio_multicast
+20d3211a08f2   ghcr.io/home-assistant/aarch64-hassio-audio:2026.02.0       "/init"               13 minutes ago      Up 12 minutes                                             hassio_audio
+715304fe481d   ghcr.io/home-assistant/aarch64-hassio-dns:2026.02.0         "/init"               13 minutes ago      Up 13 minutes                                             hassio_dns
+73454b238d67   ghcr.io/home-assistant/aarch64-hassio-cli:2026.02.0         "/init"               13 minutes ago      Up 13 minutes                                             hassio_cli
+55c5d1c931de   ghcr.io/home-assistant/aarch64-hassio-supervisor:latest     "/init"               About an hour ago   Up 14 minutes                                             hassio_supervisor
+1bbe0a5d9424   ghcr.io/home-assistant/odroid-n2-homeassistant:2026.3.4     "/init"               About an hour ago   Up 12 minutes                                             homeassistant
+8c8f8c195f8a   ghcr.io/home-assistant/aarch64-hassio-observer:2026.02.0    "/usr/bin/observer"   2 hours ago         Up 14 minutes   0.0.0.0:4357->80/tcp, [::]:4357->80/tcp   hassio_observer
+root@orangepi3-lts:~# nmcli connection show
+NAME              UUID                                  TYPE      DEVICE
+Supervisor eth0   1b81361e-86f4-32b3-b609-64a0b15d9b57  ethernet  eth0
+Supervisor wlan0  a3cf34eb-6a97-3f6c-a11f-ee8588ee75db  wifi      wlan0
+lo                ccbf7848-3408-42f6-8db6-6a2489fe9258  loopback  lo
+root@orangepi3-lts:~#
