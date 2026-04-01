@@ -26,6 +26,7 @@ sudo fdisk -l
 
 Bash
 wget https://github.com/katafey/Orange_PI/releases/download/Pi/working_boot_v1.4.bin
+
 Шаг 3: Применение фикса (Хирургическая точность)
 Записываем рабочий ATF/U-Boot. Мы используем bs=512 и seek=1, чтобы оставить родную таблицу разделов (MBR) нетронутой.
 
