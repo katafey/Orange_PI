@@ -38,6 +38,7 @@ sudo dd if=working_boot_v1.4.bin of=/dev/mmcblk0 bs=512 seek=1 conv=notrunc stat
 
 Bash
 sudo dd if=working_boot_v1.4.bin of=/dev/mmcblk2 bs=512 seek=1 conv=notrunc status=progress
+
 Шаг 4: Блокировка официальных обновлений
 Это критический шаг. Armbian при apt upgrade может попытаться вернуть свой «сломанный» загрузчик. Запрещаем это:
 
